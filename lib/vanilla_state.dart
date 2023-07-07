@@ -1,7 +1,4 @@
 library vanilla_state;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/vanilla.dart';
+export 'src/widgets/vanilla_widgets.dart';

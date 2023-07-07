@@ -1,6 +1,6 @@
 import 'package:vanilla_state/src/helpers/equality_checker.dart';
 
-abstract class StateWithStatus with EqualityChecker {
+abstract base class StateWithStatus with EqualityChecker {
   final bool success;
   final bool loading;
   final Exception? error;

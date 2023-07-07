@@ -6,7 +6,12 @@ part 'ioc/vanilla_holder.dart';
 
 part 'utils/extension.dart';
 
-abstract class VanillaNotifier<State> extends ValueNotifier<State> {
+/// [VanillaNotifier] extends flutter's [ValueNotifier] but exposes extra methods like [stream] and [state]
+///
+/// It is open to extend, mixin, implement and instantiate as you please.
+///
+/// If you will instantiate it, do not forget to call [dispose]
+class VanillaNotifier<State> extends ValueNotifier<State> {
   VanillaNotifier(super.value) {
     addListener(_streamListener);
   }

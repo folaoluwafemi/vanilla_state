@@ -1,7 +1,6 @@
 part of '../vanilla.dart';
 
-
-class InheritedVanilla<Notifier extends VanillaNotifier>
+final class InheritedVanilla<Notifier extends VanillaNotifier>
     extends InheritedWidget {
   final Notifier Function() createNotifier;
 

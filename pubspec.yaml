@@ -1,7 +1,10 @@
 name: vanilla_state
-description: A new Flutter project.
-version: 0.0.1
+description: A very simple way to manage immutable state in flutter without having too much dependencies
+version: 0.0.1-alpha
 homepage: https://github.com/folaoluwafemi/vanilla_state
+repository: https://github.com/folaoluwafemi/vanilla_state
+
+
 
 environment:
   sdk: '>=3.0.2 <4.0.0'
@@ -18,3 +21,4 @@ dev_dependencies:
 
 
 flutter:
+
