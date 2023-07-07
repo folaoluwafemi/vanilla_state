@@ -1,5 +1,8 @@
 part of 'vanilla_widgets.dart';
 
+/// [VanillaListener] is a widget that invokes the [listener] callback whenever [S] state changes.
+///
+/// You can control when [VanillaListener] calls the [listener] method by providing a [listenWhen] function.
 class VanillaListener<Notifier extends VanillaNotifier<S>, S>
     extends StatefulWidget {
   final VanillaListenerCallback<S> listener;

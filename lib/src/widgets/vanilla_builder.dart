@@ -1,5 +1,8 @@
 part of 'vanilla_widgets.dart';
 
+/// [VanillaBuilder] is a widget that builds itself based on the latest [S] state.
+///
+/// You can control when [VanillaBuilder] rebuilds by providing a [buildWhen] function
 class VanillaBuilder<Notifier extends VanillaNotifier<S>, S>
     extends StatefulWidget {
   final VanillaWidgetBuilder<S> builder;

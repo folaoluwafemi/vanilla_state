@@ -4,3 +4,7 @@
 * add State listener widgets: VanillaListener, VanillaBuilder
 * add VanillaNotifier dependency injection widget: InheritedVanilla
 * add Helper utils for making immutable state management easier and faster: EqualityChecker, StateWithStatus, VanillaUtilsMixin
+
+## 0.0.1
+* remove unnecessary helper utils
+* add code documentation

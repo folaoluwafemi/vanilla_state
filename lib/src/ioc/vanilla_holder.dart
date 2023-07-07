@@ -1,5 +1,9 @@
 part of '../vanilla.dart';
 
+/// Widget that holds a [VanillaNotifier]
+///
+/// Access to [VanillaNotifier] by context is scope based and as such you should place it in
+/// the appropriate scope in your widget tree.
 final class InheritedVanilla<Notifier extends VanillaNotifier>
     extends InheritedWidget {
   final Notifier Function() createNotifier;
