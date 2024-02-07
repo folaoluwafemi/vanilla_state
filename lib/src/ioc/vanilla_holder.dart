@@ -30,5 +30,11 @@ class InheritedVanillaElement<Notifier extends VanillaNotifier>
     extends InheritedElement {
   final Notifier notifier;
 
+  @override
+  void unmount() {
+    notifier.dispose();
+    super.unmount();
+  }
+
   InheritedVanillaElement(super.widget, this.notifier);
 }

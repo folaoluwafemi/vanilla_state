@@ -14,7 +14,7 @@ Has the following
 
 ```yaml
 dependencies:
-  vanilla_state: ^0.0.1
+  vanilla_state: ^1.0.0
 ```
 
 or
@@ -120,5 +120,5 @@ class MyHomePage extends StatelessWidget {
 
 ## Additional information
 
-o create issues, prs or otherwise contribute in anyway check out
+To create issues, prs or otherwise contribute in anyway check out
 the [package repository home](https://github.com/folaoluwafemi/vanilla_state)
