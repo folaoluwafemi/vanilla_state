@@ -7,9 +7,11 @@ part of '../vanilla.dart';
 final class InheritedVanilla<Notifier extends VanillaNotifier>
     extends InheritedWidget {
   final Notifier Function() createNotifier;
+  final bool shouldDispose;
 
   const InheritedVanilla({
     required this.createNotifier,
+    this.shouldDispose = true,
     required Widget child,
     Key? key,
   }) : super(key: key, child: child);
@@ -22,19 +24,25 @@ final class InheritedVanilla<Notifier extends VanillaNotifier>
   @override
   InheritedVanillaElement createElement() => InheritedVanillaElement<Notifier>(
         this,
-        createNotifier(),
+        notifier: createNotifier(),
+        shouldDispose: shouldDispose,
       );
 }
 
 class InheritedVanillaElement<Notifier extends VanillaNotifier>
     extends InheritedElement {
   final Notifier notifier;
+  final bool shouldDispose;
 
   @override
   void unmount() {
-    notifier.dispose();
+    if (shouldDispose) notifier.dispose();
     super.unmount();
   }
 
-  InheritedVanillaElement(super.widget, this.notifier);
+  InheritedVanillaElement(
+    super.widget, {
+    required this.notifier,
+    required this.shouldDispose,
+  });
 }

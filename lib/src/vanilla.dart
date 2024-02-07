@@ -35,7 +35,6 @@ class VanillaNotifier<State> extends ValueNotifier<State> {
 
   @override
   void dispose() {
-    print('disposed');
     removeListener(_streamListener);
     _streamController.close();
     super.dispose();
