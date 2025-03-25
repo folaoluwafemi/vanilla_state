@@ -6,8 +6,8 @@ extension VanillaBuildContextExtension on BuildContext {
   /// This method does NOT trigger a rebuild
   T read<T extends VanillaNotifier>() {
     try {
-      return (getElementForInheritedWidgetOfExactType<InheritedVanilla<T>>()
-              as InheritedVanillaElement<T>?)!
+      return (getElementForInheritedWidgetOfExactType<_InheritedVanilla<T>>()
+              as _InheritedVanillaElement<T>?)!
           .notifier;
     } catch (e) {
       throw Exception('Cannot find InheritedVanilla<$T> in the element tree');

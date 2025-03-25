@@ -12,4 +12,6 @@
 ## 1.0.0
 * First Stable production ready version
 * allow disposing of `Vanilla` from the `VanillaHolder`
+* add support for optionally disposing `Vanilla` from the `VanillaHolder`
 * add extra utils to vanilla
+
