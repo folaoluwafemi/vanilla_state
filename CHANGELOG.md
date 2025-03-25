@@ -15,3 +15,6 @@
 * add support for optionally disposing `Vanilla` from the `VanillaHolder`
 * add extra utils to vanilla
 
+## 1.1.0
+* Add `BaseNotifier`, `BaseState` and sub-classes for handling success, in-loading, out-loading, error and fatal-error states and `VanilaUtilsMixin` 
+

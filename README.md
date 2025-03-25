@@ -7,14 +7,14 @@ Has the following
 * State management: VanillaNotifier
 * State listener widgets: VanillaListener, VanillaBuilder
 * VanillaNotifier dependency injection widget: InheritedVanilla
-* Helper utils for making immutable state management easier and faster: EqualityChecker,
-  StateWithStatus, VanillaUtilsMixin
+* Helper utils for making immutable state management easier and faster: BaseNotifier,
+  BaseState (with success, in-loading, out-loading, error and fatal-error states
 
 ## Getting started
 
 ```yaml
 dependencies:
-  vanilla_state: ^1.0.0
+  vanilla_state: ^1.3.0
 ```
 
 or
@@ -59,8 +59,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
       ),
+      /// This "Provides" [CounterNotifier] to the widget tree below it
       home: InheritedVanilla<CounterNotifier>(
         createNotifier: () => CounterNotifier(),
         child: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -78,27 +78,19 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme
-            .of(context)
-            .colorScheme
-            .inversePrimary,
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'You have pushed the button this many times:',
-            ),
+            const Text('You have pushed the button this many times:'),
             VanillaBuilder<CounterNotifier, int>(
               builder: (context, state) {
                 return Text(
                   '$state',
-                  style: Theme
-                      .of(context)
-                      .textTheme
-                      .headlineMedium,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 );
               },
             ),
@@ -106,9 +98,8 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: context
-            .read<CounterNotifier>()
-            .increment,
+        /// increment here is passed as a tear-off
+        onPressed: context.read<CounterNotifier>().increment,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
