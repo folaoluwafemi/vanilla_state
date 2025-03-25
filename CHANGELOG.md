@@ -18,3 +18,7 @@
 ## 1.1.0
 * Add `BaseNotifier`, `BaseState` and sub-classes for handling success, in-loading, out-loading, error and fatal-error states and `VanilaUtilsMixin` 
 
+
+## 1.1.0+1
+* fix for `BaseNotifier` import 
+
